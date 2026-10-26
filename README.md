@@ -1,7 +1,14 @@
-# GARNET project page
+# GARNET
 
 Project website for **"From Attribute Alignment to Attribute Verification: GARNET for
 Text-Based Person Retrieval"** (WACV 2027, Paper ID 2471).
+
+**Source code: Coming Soon.** This repository currently hosts only the project
+website (`index.html` + `assets/`), published via GitHub Pages at
+**https://sachinbairwa-git.github.io/GARNET/**. The GARNET training/evaluation
+code will be released here before the camera-ready deadline.
+
+---
 
 Static site: `index.html` + `assets/`. No build step.
 
