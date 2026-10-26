@@ -24,21 +24,21 @@
     <div class="affiliations"><sup class="author-sup">1</sup>Indian Institute of Technology Mandi, India</div>
 
     <div class="buttons-row">
-      <a class="btn secondary disabled" href="#" aria-disabled="true">
+      <a class="btn" href="assets/paper/garnet_main.pdf" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        Paper (Coming Soon)
+        Paper (PDF)
+      </a>
+      <a class="btn" href="assets/paper/garnet_supplementary.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        Supplementary
       </a>
       <a class="btn secondary disabled" href="#" aria-disabled="true">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        Supplementary (Coming Soon)
-      </a>
-      <a class="btn secondary" href="https://github.com/sachinbairwa-git/GARNET" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.89-.01-1.74-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 014.96 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
-        Code (GitHub)
+        Code (Coming Soon)
       </a>
       <a class="btn secondary disabled" href="#" aria-disabled="true">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        Poster (Coming Soon)
+        Poster (coming soon)
       </a>
     </div>
   </div>
@@ -48,50 +48,302 @@
 
   <section id="abstract">
     <h2 class="section-title">Abstract</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>The abstract will be posted here shortly.</p>
+    <div class="card">
+      <p class="abstract-text">
+        Text-based person retrieval (TBPR) has progressed from global image&ndash;text matching to fine-grained
+        phrase&ndash;region alignment, attribute-aware modeling, and perturbation-sensitive learning. These
+        capabilities, however, do not by themselves guarantee that a specific changed attribute is verified
+        against its corresponding local visual evidence. An otherwise correct description can therefore remain
+        compatible with an image even when one decisive attribute is changed, because the corrupted phrase is
+        not explicitly required to lose visual support.
+      </p>
+      <p class="abstract-text">
+        We introduce <b>GARNET</b>, a grounded counterfactual attribute-verification framework that explicitly
+        couples semantic corruption with local visual evidence. GARNET combines <b>Phrase&ndash;Patch Grounding
+        (PPG)</b>, which exposes phrase-specific support over image patches, with <b>Counterfactual Attribute
+        Verification (CAV)</b>. CAV-G requires the correct caption to outrank a controlled single-attribute
+        corruption, while CAV-L requires the original changed phrase to receive stronger local support than its
+        corrupted counterpart. Thus, GARNET moves from attribute correspondence or generic perturbation
+        sensitivity toward explicit <i>grounded attribute verification</i>.
+      </p>
+      <p class="abstract-text">
+        We evaluate standard retrieval on CUHK-PEDES, ICFG-PEDES, and RSTPReid, and use controlled verification
+        diagnostics on CUHK-PEDES to directly test the targeted failure mode. GARNET remains competitive under
+        conventional retrieval while reaching <b>91.92% Local C&gt;C</b>, improving the strongest evaluated prior
+        local baseline by <b>10.40 points</b>, with a signed local gap of <b>&Delta;<sub>&#8467;</sub> = 0.135</b>.
+      </p>
     </div>
   </section>
 
   <section id="motivation">
     <h2 class="section-title">Challenges and Motivation</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>This section will describe the key challenges GARNET addresses and why they matter.</p>
+    <p>
+      TBPR aims to retrieve the pedestrian image that best matches a free-form natural-language description.
+      The task is inherently fine-grained: different identities often share most of their appearance, while the
+      decisive distinction may be a small semantic detail such as <i>blue shirt</i> versus <i>red shirt</i>,
+      <i>backpack</i> versus <i>handbag</i>, or <i>short sleeves</i> versus <i>long sleeves</i>. A successful
+      model must therefore determine not only whether an image and a caption are globally compatible, but also
+      whether the specific attributes expressed in the query are supported by visual evidence.
+    </p>
+    <p>
+      Prior work has advanced three distinct capabilities &mdash; global cross-modal matching (CMPM/CMPC, CLIP,
+      IRRA), fine-grained phrase/attribute-level alignment (ViTAA, UFineBench, MARS++, KPDM, QC-Align, CECA), and
+      perturbation-sensitive learning (RaSa) &mdash; but none of them explicitly require that a specific changed
+      attribute loses local visual support when it becomes visually inconsistent. This is the <b>missing link</b>
+      GARNET targets.
+    </p>
+    <figure>
+      <img src="assets/img/figure1_motivation.png" alt="Figure 1: Motivation for GARNET">
+      <figcaption><b>Figure 1. Motivation for GARNET.</b> Prior TBPR methods have advanced global matching,
+      fine-grained attribute correspondence, and perturbation sensitivity. GARNET targets the remaining missing
+      connection: a controlled changed attribute is explicitly tied to its local visual evidence and is required
+      to lose support when it becomes visually inconsistent.</figcaption>
+    </figure>
+
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h4>No grounded verification</h4>
+        <p>A high global image&ndash;caption similarity score does not guarantee every fine-grained attribute in
+        the caption is visually correct &mdash; nothing explicitly checks the changed phrase against local
+        evidence.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Implicit vs. explicit coupling</h4>
+        <p>Fine-grained alignment and perturbation sensitivity are modeled separately in prior work; neither
+        requires the exact corrupted attribute's local support to decrease when the attribute is changed.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Attribute-confusable distractors</h4>
+        <p>Near-duplicate identities differing by one controlled attribute (color, clothing, carried object,
+        pose/action) are the hardest, most realistic failure mode for retrieval systems.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Evaluation gap</h4>
+        <p>Standard R@K/mAP retrieval metrics do not directly measure whether a model's preference tracks a
+        single, controlled semantic change &mdash; motivating GARNET's diagnostic C&gt;C / &Delta; protocol.</p>
+      </div>
     </div>
   </section>
 
   <section id="method">
     <h2 class="section-title">Proposed Method</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>Method details, architecture diagrams, and key components will be posted here shortly.</p>
+    <p>
+      GARNET is a CLIP-style dual-encoder framework (CLIP ViT-L/14) fine-tuned end-to-end, combining a
+      <b>Phrase&ndash;Patch Grounding (PPG)</b> module that grounds caption phrases to image patches with a
+      <b>Counterfactual Attribute Verification (CAV)</b> objective applied at both the global (CAV-G) and local
+      (CAV-L) level. The model is first domain-adapted on the MALS person corpus (Stage A) and then fine-tuned
+      with the full objective (Stage B).
+    </p>
+    <figure>
+      <img src="assets/img/figure2_architecture.png" alt="Figure 2: GARNET architecture">
+      <figcaption><b>Figure 2. GARNET architecture.</b> PPG grounds attribute phrases to visual patches and
+      produces phrase-specific support together with an aggregated local similarity. Controlled
+      single-attribute counterfactuals are then verified by CAV: CAV-G requires the correct caption to outrank
+      its corrupted counterpart globally, while CAV-L requires the original changed phrase to retain stronger
+      local visual support than its corrupted counterpart.</figcaption>
+    </figure>
+
+    <h3 class="sub-title">Key components</h3>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h4>Phrase Extraction &amp; Counterfactual Construction</h4>
+        <p>Visually verifiable attribute phrases are extracted from each caption; controlled single-attribute
+        counterfactuals change exactly one phrase (color, clothing type, carried object, or pose/action) while
+        preserving the rest of the description.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Dual-Encoder Representation</h4>
+        <p>A CLIP-style image/text dual encoder produces global image/text features and patch/phrase-level
+        token features, trained with identity-aware bidirectional Similarity Distribution Matching (SDM).</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Phrase&ndash;Patch Grounding (PPG)</h4>
+        <p>Derives a phrase-specific grounding score by max-pooling phrase&ndash;patch similarity, producing
+        both per-phrase alignment scores and an aggregated local similarity used for CAV-L.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Counterfactual Attribute Verification (CAV)</h4>
+        <p>CAV-G is a global hinge loss requiring the correct caption's global similarity to exceed that of its
+        corrupted counterpart; CAV-L is a local hinge loss requiring the original phrase's grounding score to
+        exceed the corrupted phrase's grounding score.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Auxiliary Objectives</h4>
+        <p>A masked-language-modeling loss (with attribute-biased masking) and an identity (BNNeck) loss are
+        added to strengthen the shared representation during fine-tuning.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>Domain-Adaptive Pre-Training (Stage A)</h4>
+        <p>The dual encoder is first pre-trained on the MALS person-domain corpus with SDM + MLM losses before
+        PPG and CAV are introduced in Stage B fine-tuning.</p>
+      </div>
     </div>
   </section>
 
   <section id="results">
     <h2 class="section-title">Quantitative Results</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>Tables and figures for the main experimental results will be posted here shortly.</p>
+
+    <h3 class="sub-title">Standard text-based person retrieval</h3>
+    <div class="table-wrap">
+      <table>
+        <caption>Table 1. Comparison with prior methods on CUHK-PEDES, ICFG-PEDES, and RSTPReid (R@1 / R@5 / R@10 / mAP). &dagger; denotes MALS person-domain pre-training.</caption>
+        <thead>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th rowspan="2">Venue</th>
+            <th colspan="4">CUHK-PEDES</th>
+            <th colspan="4">ICFG-PEDES</th>
+            <th colspan="4">RSTPReid</th>
+          </tr>
+          <tr>
+            <th>R@1</th><th>R@5</th><th>R@10</th><th>mAP</th>
+            <th>R@1</th><th>R@5</th><th>R@10</th><th>mAP</th>
+            <th>R@1</th><th>R@5</th><th>R@10</th><th>mAP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CLIP-ViT-B/16</td><td>&ndash;</td><td>68.19</td><td>86.47</td><td>91.47</td><td>61.12</td><td>56.74</td><td>75.72</td><td>82.26</td><td>31.84</td><td>54.05</td><td>80.70</td><td>88.00</td><td>43.41</td></tr>
+          <tr><td>IRRA</td><td>CVPR'23</td><td>73.38</td><td>89.93</td><td>93.71</td><td>66.13</td><td>63.46</td><td>80.25</td><td>85.82</td><td>38.06</td><td>60.20</td><td>81.30</td><td>88.20</td><td>47.17</td></tr>
+          <tr><td>RaSa</td><td>IJCAI'23</td><td>76.51</td><td>90.29</td><td>94.25</td><td>69.38</td><td>65.28</td><td>80.40</td><td>85.12</td><td>41.29</td><td>66.90</td><td>86.50</td><td>91.35</td><td>52.31</td></tr>
+          <tr><td>APTM&dagger;</td><td>ACM MM'23</td><td>76.53</td><td>90.04</td><td>94.15</td><td>66.91</td><td>68.51</td><td>82.99</td><td>87.56</td><td>41.22</td><td>67.50</td><td>85.70</td><td>91.45</td><td>52.56</td></tr>
+          <tr><td>RDE</td><td>CVPR'24</td><td>75.94</td><td>90.14</td><td>94.12</td><td>67.56</td><td>67.68</td><td>82.47</td><td>87.36</td><td>40.06</td><td>65.35</td><td>83.95</td><td>89.90</td><td>50.88</td></tr>
+          <tr><td>CFAM</td><td>CVPR'24</td><td>75.60</td><td>90.53</td><td>94.36</td><td>67.27</td><td>65.38</td><td>81.17</td><td>86.35</td><td>39.42</td><td>62.45</td><td>83.55</td><td>91.10</td><td>49.50</td></tr>
+          <tr><td>MARS++&dagger;</td><td>TOMM'25</td><td>77.89</td><td>90.68</td><td>93.91</td><td><u>71.46</u></td><td>68.50</td><td>82.29</td><td>86.43</td><td><u>45.69</u></td><td>67.80</td><td>86.65</td><td>91.55</td><td>53.23</td></tr>
+          <tr><td>IAPTM (HCA)</td><td>ACM MM'25</td><td>77.44</td><td>91.23</td><td>94.61</td><td>68.92</td><td>66.95</td><td>82.34</td><td>87.06</td><td>40.13</td><td>69.70</td><td>86.95</td><td>92.45</td><td><u>53.72</u></td></tr>
+          <tr><td>ICL</td><td>CVPR'25</td><td>77.91</td><td>90.27</td><td>94.14</td><td>69.13</td><td>69.02</td><td>82.45</td><td>87.36</td><td>41.21</td><td>70.55</td><td>85.95</td><td>91.65</td><td>53.68</td></tr>
+          <tr><td>KPDM-L/14</td><td>AAAI'26</td><td>78.02</td><td>91.49</td><td>95.00</td><td>69.71</td><td>69.13</td><td>83.46</td><td>88.10</td><td>42.78</td><td>67.95</td><td>86.35</td><td>91.65</td><td>52.97</td></tr>
+          <tr><td>ALIGNER</td><td>TIFS'26</td><td>76.20</td><td>90.81</td><td>94.61</td><td>68.00</td><td>68.61</td><td>82.81</td><td>87.44</td><td>41.07</td><td>68.65</td><td>85.00</td><td>90.15</td><td>51.74</td></tr>
+          <tr><td>CADA+QC-Align</td><td>CVPR'26</td><td><b>79.31</b></td><td><u>91.86</u></td><td><u>95.17</u></td><td>&ndash;</td><td>68.79</td><td>83.16</td><td>87.81</td><td>&ndash;</td><td>71.10</td><td>87.50</td><td>92.75</td><td>&ndash;</td></tr>
+          <tr><td>CECA</td><td>CVPR'26</td><td>78.30</td><td>91.10</td><td>94.09</td><td>65.92</td><td><u>72.25</u></td><td><b>85.31</b></td><td><u>89.32</u></td><td>37.57</td><td><u>71.40</u></td><td><u>88.30</u></td><td><u>93.35</u></td><td>52.07</td></tr>
+          <tr class="highlight"><td><b>GARNET&dagger; (ours)</b></td><td><b>&ndash;</b></td><td><u>79.15</u></td><td><b>92.04</b></td><td><b>95.45</b></td><td><b>71.95</b></td><td><b>72.34</b></td><td><u>83.63</u></td><td><b>89.95</b></td><td><b>48.26</b></td><td><b>73.06</b></td><td><b>89.30</b></td><td><b>93.55</b></td><td><b>55.81</b></td></tr>
+        </tbody>
+      </table>
     </div>
+    <p class="dagger-note"><b>Bold</b> = best, <u>underline</u> = second-best (as in the paper). GARNET achieves the best mAP on all three datasets and the best R@5/R@10 on CUHK-PEDES and RSTPReid.</p>
+
+    <h3 class="sub-title">Controlled attribute verification (CUHK-PEDES)</h3>
+    <div class="table-wrap">
+      <table>
+        <caption>Table 2. Controlled attribute-verification diagnostics. ‡ = evaluation-only post-hoc local probe applied to frozen prior-method checkpoints (no baseline retrained).</caption>
+        <thead>
+          <tr>
+            <th>Method</th><th>Representative capability</th><th>Attr-Conf. R@1</th>
+            <th>Global C&gt;C (%)</th><th>&Delta;<sub>g</sub></th>
+            <th>Local C&gt;C (%)</th><th>&Delta;<sub>&#8467;</sub></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>IRRA</td><td>Global + implicit relation alignment</td><td>93.26</td><td>86.73</td><td>0.055</td><td>58.14&ddagger;</td><td>0.008&ddagger;</td></tr>
+          <tr><td>RaSa</td><td>Replaced-word / perturbation sensitivity</td><td>94.38</td><td>86.21</td><td>0.058</td><td>41.40&ddagger;</td><td>&minus;0.012&ddagger;</td></tr>
+          <tr><td>MARS++</td><td>Attribute-aware learning</td><td>95.45</td><td>84.28</td><td>0.065</td><td>34.63&ddagger;</td><td>&minus;0.015&ddagger;</td></tr>
+          <tr><td>CECA</td><td>Fine-grained attribute correspondence</td><td>93.26</td><td>85.95</td><td>0.051</td><td>81.52&ddagger;</td><td>0.034&ddagger;</td></tr>
+          <tr class="highlight"><td><b>GARNET</b></td><td><b>Grounded counterfactual verification</b></td><td><b>95.51</b></td><td><b>92.04</b></td><td><b>0.034</b></td><td><b>91.92</b></td><td><b>0.135</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="dagger-note">GARNET improves the strongest prior local baseline (CECA) by <b>+10.40</b> points on Local C&gt;C and by <b>+0.101</b> on &Delta;<sub>&#8467;</sub> &mdash; the diagnostic that directly measures grounded attribute verification.</p>
   </section>
 
   <section id="ablation">
     <h2 class="section-title">Ablation Study</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>Ablation tables and component-wise analysis will be posted here shortly.</p>
+
+    <h3 class="sub-title">Core component-wise ablation</h3>
+    <div class="table-wrap">
+      <table>
+        <caption>Table 3. Progression from baseline to full GARNET on CUHK-PEDES.</caption>
+        <thead>
+          <tr>
+            <th>Configuration</th><th>R@1</th><th>mAP</th><th>Attr-Conf. R@1</th>
+            <th>Global C&gt;C</th><th>Local C&gt;C</th><th>&Delta;<sub>&#8467;</sub></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Baseline</td><td>74.40</td><td>65.04</td><td>88.26</td><td>85.82</td><td>&ndash;</td><td>&ndash;</td></tr>
+          <tr><td>+ Stage A (MALS pre-training)</td><td>76.37</td><td>66.96</td><td>90.38</td><td>86.43</td><td>&ndash;</td><td>&ndash;</td></tr>
+          <tr><td>+ Stage A + PPG</td><td>78.15</td><td>68.64</td><td>91.38</td><td>89.95</td><td>88.05</td><td>0.106</td></tr>
+          <tr><td>+ Stage A + CAV-G</td><td>78.45</td><td>69.04</td><td>92.05</td><td>90.72</td><td>&ndash;</td><td>&ndash;</td></tr>
+          <tr><td>+ Stage A + PPG + CAV-G</td><td>77.84</td><td>68.65</td><td>94.38</td><td>90.46</td><td>89.86</td><td>0.115</td></tr>
+          <tr class="highlight"><td><b>Full GARNET (+ CAV-L)</b></td><td><b>79.15</b></td><td><b>71.95</b></td><td><b>95.51</b></td><td><b>92.04</b></td><td><b>91.92</b></td><td><b>0.135</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">Generic perturbation vs. controlled semantic corruption</h3>
+    <div class="table-wrap">
+      <table>
+        <caption>Table 4. Generic negative-mining supervision cannot substitute for controlled single-attribute corruption.</caption>
+        <thead>
+          <tr><th>Supervision / variant</th><th>Attr-Conf. R@1</th><th>Global C&gt;C</th><th>&Delta;<sub>g</sub></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Random caption negative</td><td>90.49</td><td>83.18</td><td>0.016</td></tr>
+          <tr><td>Random token replacement</td><td>91.38</td><td>84.95</td><td>0.015</td></tr>
+          <tr><td>Single-attribute corruption + CAV-G</td><td>92.05</td><td>90.72</td><td>0.029</td></tr>
+          <tr><td>PPG + CAV-G</td><td>94.38</td><td>90.46</td><td>0.026</td></tr>
+          <tr class="highlight"><td><b>Full GARNET (+ CAV-L)</b></td><td><b>95.51</b></td><td><b>92.04</b></td><td><b>0.034</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">Local C&gt;C by corruption type (supplementary)</h3>
+    <div class="table-wrap">
+      <table>
+        <caption>Supplementary Table 2. Local C&gt;C (%) broken down by corruption category.</caption>
+        <thead>
+          <tr><th>Variant</th><th>Color</th><th>Clothing</th><th>Carried Object</th><th>Pose / Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PPG only</td><td>96.79</td><td>83.27</td><td>90.48</td><td>83.05</td></tr>
+          <tr><td>PPG + CAV-G</td><td><b>98.72</b></td><td>84.01</td><td>93.12</td><td>86.44</td></tr>
+          <tr class="highlight"><td><b>Full GARNET</b></td><td>98.08</td><td><b>86.25</b></td><td><b>94.71</b></td><td><b>90.68</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="dagger-note">Color discrimination is already near-saturated after PPG+CAV-G, so CAV-L gives a small decrease there; clothing, carried-object, and pose/action categories all improve further with CAV-L.</p>
+
+    <h3 class="sub-title">What each component contributes</h3>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h4>Stage A (MALS pre-training)</h4>
+        <p>Person-domain pre-training alone raises R@1 and Attr-Conf. R@1, but does not meaningfully move Local
+        C&gt;C &mdash; domain adaptation strengthens the representation but does not by itself teach grounded
+        verification.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>PPG</h4>
+        <p>Introduces phrase-specific grounding, establishing the first measurable Local C&gt;C signal
+        (88.05%, &Delta;<sub>&#8467;</sub>=0.106) by exposing per-phrase visual evidence.</p>
+      </div>
+      <div class="challenge-card">
+        <h4>CAV-G</h4>
+        <p>Adds global counterfactual preference supervision, pushing Attr-Conf. R@1 and Global C&gt;C
+        higher, confirming that targeted single-attribute supervision outperforms generic hard negatives
+        (Table 4).</p>
+      </div>
+      <div class="challenge-card">
+        <h4>CAV-L</h4>
+        <p>The final local hinge loss directly couples grounding scores for correct vs. corrupted phrases,
+        raising Local C&gt;C from 89.86%&rarr;91.92% and &Delta;<sub>&#8467;</sub> from 0.115&rarr;0.135 &mdash;
+        the component most responsible for GARNET's grounded-verification behavior.</p>
+      </div>
     </div>
   </section>
 
   <section id="qualitative">
     <h2 class="section-title">Qualitative Results</h2>
-    <div class="coming-soon">
-      <span class="badge">Coming Soon</span>
-      <p>Qualitative examples and visual comparisons will be posted here shortly.</p>
-    </div>
+    <p>
+      Top-5 retrieval results for RaSa, MARS++, CECA, and GARNET on the same attribute-confusable query. Green
+      borders denote the correct identity; red borders denote incorrect identities with the decisive
+      query-relevant mismatch annotated below each result. Prior methods consistently rank attribute-confusable
+      distractors above the correct identity, whereas GARNET retrieves the correct identity at Rank-1.
+    </p>
+    <figure>
+      <img src="assets/img/figure3_qualitative.png" alt="Figure 3: Attribute-confusable retrieval qualitative comparison">
+      <figcaption><b>Figure 3. Attribute-confusable retrieval.</b> Top-5 results for RaSa, MARS++, CECA, and
+      GARNET on the same query: &ldquo;The woman is wearing a black shirt with a scarf, wearing pair of jeans,
+      and is carrying a plastic bag in her hand.&rdquo; Short tags indicate the decisive query-relevant
+      mismatch (e.g. missing scarf, bag-hand mismatch, no jeans).</figcaption>
+    </figure>
   </section>
 
   <section id="bibtex">
