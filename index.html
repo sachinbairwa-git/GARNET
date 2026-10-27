@@ -327,6 +327,14 @@
         the component most responsible for GARNET's grounded-verification behavior.</p>
       </div>
     </div>
+
+    <h3 class="sub-title">CAV-L rank correction examples (supplementary)</h3>
+    <figure>
+      <img src="assets/img/supp_cavl_corrected.png" alt="Supplementary figure: CAV-L rank correction examples">
+      <figcaption><b>Supplementary figure.</b> Adding CAV-L to PPG+CAV-G moves the paired identity from
+      Rank-2 to Rank-1 on both example queries shown, illustrating concretely how the local verification signal
+      corrects retrieval ranking beyond what global counterfactual supervision alone achieves.</figcaption>
+    </figure>
   </section>
 
   <section id="qualitative">
@@ -343,6 +351,43 @@
       GARNET on the same query: &ldquo;The woman is wearing a black shirt with a scarf, wearing pair of jeans,
       and is carrying a plastic bag in her hand.&rdquo; Short tags indicate the decisive query-relevant
       mismatch (e.g. missing scarf, bag-hand mismatch, no jeans).</figcaption>
+    </figure>
+
+    <h3 class="sub-title">Grounding activation maps under attribute corruption (supplementary)</h3>
+    <p>
+      Phrase&ndash;patch grounding activation heatmaps for RaSa, MARS++, and GARNET on the same image under a
+      color corruption (red shirt&rarr;tan shirt) and an object corruption (bag&rarr;cup). GARNET's activation
+      shifts away from the corrupted region's support more clearly than the post-hoc probes applied to prior
+      methods.
+    </p>
+    <figure>
+      <img src="assets/img/supp_activation_heatmaps.png" alt="Supplementary figure: grounding activation heatmaps under attribute corruption">
+      <figcaption><b>Supplementary figure.</b> (a) Color corruption: red shirt&rarr;tan shirt. (b) Object
+      corruption: bag&rarr;cup. Activation scale: 0 (blue, low) to 1 (red, high).</figcaption>
+    </figure>
+
+    <h3 class="sub-title">Robustness to paraphrasing vs. sensitivity to corruption (supplementary)</h3>
+    <p>
+      GARNET retrieves the paired identity at Rank-1 for both the original and meaning-preserving paraphrase
+      query, while correctly demoting it under the counterfactual (semantically corrupted) query &mdash;
+      illustrating the intended dissociation between robustness to paraphrasing and sensitivity to genuine
+      semantic corruption, compared against IRRA and RaSa on the same triplet.
+    </p>
+    <figure>
+      <img src="assets/img/supp_paraphrase_vs_corruption.png" alt="Supplementary figure: paraphrase robustness vs corruption sensitivity">
+      <figcaption><b>Supplementary figure.</b> Corruption type: color (gray pants&rarr;white pants). Green
+      borders denote the paired identity; red borders denote a different identity.</figcaption>
+    </figure>
+
+    <h3 class="sub-title">Failure case analysis (supplementary)</h3>
+    <p>
+      GARNET's remaining failure modes fall into four categories: low resolution/blur, partial occlusion,
+      fine-grained attribute ambiguity, and attribute-confusable appearance across different identities.
+    </p>
+    <figure>
+      <img src="assets/img/supp_failure_cases.png" alt="Supplementary figure: GARNET failure case analysis">
+      <figcaption><b>Supplementary figure.</b> Four representative failure categories, each showing the text
+      query, top-3 retrieved results, and the paired identity's true rank (R).</figcaption>
     </figure>
   </section>
 
