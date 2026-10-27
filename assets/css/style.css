@@ -17,6 +17,7 @@ body {
   background: var(--bg);
   margin: 0;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 .container {
@@ -155,14 +156,31 @@ h3.sub-title {
 }
 
 figure {
-  margin: 20px 0;
+  margin: 20px auto;
   text-align: center;
+  max-width: 100%;
+  width: fit-content;
 }
 
 figure img {
-  max-width: 100%;
+  display: block;
+  max-width: min(100%, 1400px);
+  width: auto;
+  max-height: 80vh;
+  height: auto;
+  margin: 0 auto;
   border-radius: 8px;
   border: 1px solid var(--border);
+  object-fit: contain;
+}
+
+/* Wide figures (architecture diagrams) break out of the narrow text column
+   on large viewports so they don't shrink unreadably small. */
+figure.wide {
+  max-width: 1400px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 figcaption {
